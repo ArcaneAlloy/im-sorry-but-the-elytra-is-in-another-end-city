@@ -1,16 +1,16 @@
 package fr.shoqapik.noelytramod;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 
 @Mod(NoElytrasMod.MODID)
 public class NoElytrasMod {
 
     public static final String MODID = "noelytrasmod";
 
-    public NoElytrasMod() {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+    public NoElytrasMod(IEventBus modEventBus) {
+        modEventBus.addListener(this::commonSetup);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {

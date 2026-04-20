@@ -8,6 +8,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.decoration.ItemFrame;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -56,13 +57,13 @@ public abstract class EndCityPieceMixin extends TemplateStructurePiece {
 
         // Resolve configured item, fall back to Book if ID is unknown
         Item item = BuiltInRegistries.ITEM
-                .getOptional(new ResourceLocation(NoElytraConfig.itemId))
+                .getOptional(ResourceLocation.parse(NoElytraConfig.itemId))
                 .orElse(Items.BOOK);
 
         ItemStack stack = new ItemStack(item);
 
         if (NoElytraConfig.itemName != null && !NoElytraConfig.itemName.isBlank()) {
-            stack.setHoverName(Component.literal(NoElytraConfig.itemName));
+            stack.set(DataComponents.CUSTOM_NAME, Component.literal(NoElytraConfig.itemName));
         }
 
         Direction facing = this.placeSettings.getRotation().rotate(Direction.SOUTH);
