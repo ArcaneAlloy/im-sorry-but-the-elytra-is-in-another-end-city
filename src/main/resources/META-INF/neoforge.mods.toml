@@ -2,11 +2,13 @@ modLoader="javafml"
 loaderVersion="[4,)"
 license="All rights reserved"
 
+[[mixins]]
+    config = "noelytramod.mixins.json"
+
 [[mods]]
 modId="noelytrasmod"
 version="2.0.0"
 displayName="Sorry but the Elytra is in another End City"
-logoFile="icon.png"
 credits="Programmed by shoqapik12 & Art by Zenokim"
 authors="precisemodpacker"
 description="Replaces the Elytra in End City ships with a configurable item. Fixes LootR compatibility."
@@ -14,13 +16,13 @@ description="Replaces the Elytra in End City ships with a configurable item. Fix
 [[dependencies.noelytrasmod]]
 modId="neoforge"
 type="required"
-versionRange="[21.1,)"
+versionRange="[26.1,)"
 ordering="NONE"
 side="BOTH"
 
 [[dependencies.noelytrasmod]]
 modId="minecraft"
 type="required"
-versionRange="[1.21.1,1.22)"
+versionRange="[26.1.2,)"
 ordering="NONE"
 side="BOTH"

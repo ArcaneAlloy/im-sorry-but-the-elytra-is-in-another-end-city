@@ -5,7 +5,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.decoration.ItemFrame;
 import net.minecraft.core.component.DataComponents;
@@ -56,8 +56,9 @@ public abstract class EndCityPieceMixin extends TemplateStructurePiece {
                 .forEach(e -> e.discard());
 
         // Resolve configured item, fall back to Book if ID is unknown
+        // En MC 26.1.2: Identifier.parse() en lugar de ResourceLocation.parse()
         Item item = BuiltInRegistries.ITEM
-                .getOptional(ResourceLocation.parse(NoElytraConfig.itemId))
+                .getOptional(Identifier.parse(NoElytraConfig.itemId))
                 .orElse(Items.BOOK);
 
         ItemStack stack = new ItemStack(item);

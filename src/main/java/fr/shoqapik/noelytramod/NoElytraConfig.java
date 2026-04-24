@@ -19,7 +19,6 @@ public class NoElytraConfig {
     private static final File FILE = FMLPaths.GAMEDIR.get()
             .resolve("config/noelytramod.json").toFile();
 
-    // Defaults — same as the original mod
     public static String itemId   = "minecraft:book";
     public static String itemName = "I'm sorry but the Elytra is in another End City";
 
