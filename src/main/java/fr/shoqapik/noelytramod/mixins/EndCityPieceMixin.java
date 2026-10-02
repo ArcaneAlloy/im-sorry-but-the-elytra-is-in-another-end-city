@@ -48,8 +48,8 @@ public class EndCityPieceMixin extends TemplateStructurePiece {
                 p_227507_.addFreshEntity(shulker);
             } else if (p_227505_.startsWith("Elytra")) {
                 ItemFrame itemframe = new ItemFrame(p_227507_.getLevel(), p_227506_, this.placeSettings.getRotation().rotate(Direction.SOUTH));
-                ItemStack stack = new ItemStack(Items.BOOK);
-                stack.setHoverName(Component.literal("I'm sorry but the Elytra is in another End City"));
+                // Item configurable (config/noelytrasmod-common.toml); por defecto el libro de siempre
+                ItemStack stack = fr.shoqapik.noelytramod.NoElytrasConfig.createFrameItem();
                 itemframe.setItem(stack, false);
                 p_227507_.addFreshEntity(itemframe);
             }
